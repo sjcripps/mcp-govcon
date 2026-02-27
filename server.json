@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.ezbizservices/govcon",
+  "title": "EzBiz Government Contracting Intelligence",
+  "description": "AI-powered federal contracting intelligence — contract opportunity search, competitor win analysis, agency spending intelligence, and set-aside tracking using SAM.gov, USASpending.gov, and FPDS data.",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://govcon.ezbizservices.com/mcp",
+      "headers": [
+        {
+          "name": "x-api-key",
+          "description": "Your EzBiz API key. Get a free key at https://govcon.ezbizservices.com",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docs — EzBiz Government Contracting Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="/" class="logo"><span>EzBiz</span> Government Contracting Intelligence</a>
+    <div class="nav-links">
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/signup" class="btn-nav">Get Free API Key</a>
+    </div>
+  </div>
+</nav>
+<div class="container docs-container">
+  <h1>Documentation</h1>
+  <h2>Connection</h2>
+  <p>Server URL: <code>https://govcon.ezbizservices.com/mcp</code></p>
+  <p>Auth: Pass your API key as <code>X-API-Key</code> header or <code>api_key</code> query parameter.</p>
+
+  <h2>Tools</h2>
+  <div class="docs-tools"><h3> search_contracts<br>Search federal contract opportunities on SAM.gov — filter by NAICS code, set-aside type, agency, dollar range, and keywords. Returns active solicitations with due dates, contact info, and bid requirements.<br><br><strong>Parameters:<strong><br>  - <strong>query<strong> (string): Keywords to search for (e.g., 'cybersecurity', 'IT support', 'janitorial services')<br>  - <strong>naics<strong> (string, optional): NAICS code to filter by (e.g., '541512' for computer systems design)<br>  - <strong>set_aside<strong> (string, optional): Set-aside type: 8a, HUBZone, SDVOSB, WOSB, SBA, or 'all'<br>  - <strong>agency<strong> (string, optional): Federal agency name (e.g., 'Department of Defense', 'VA')<br><br><h3> analyze_agency<br>Analyze a federal agency's spending patterns and contracting behavior — top contractors, spending trends, preferred NAICS codes, contract types, and upcoming opportunities. Uses USASpending.gov data.<br><br><strong>Parameters:<strong><br>  - <strong>agency<strong> (string): Federal agency name (e.g., 'Department of Defense', 'Department of Veterans Affairs', 'GSA')<br>  - <strong>fiscal_year<strong> (string, optional): Fiscal year to analyze (e.g., '2025')<br>  - <strong>naics<strong> (string, optional): NAICS code to focus analysis on<br><br><h3> competitor_win_analysis<br>Analyze a competitor's federal contract wins — awarded contracts, agencies they work with, contract values, NAICS codes, and win patterns. Find out who's winning in your space and what they're doing differently.<br><br><strong>Parameters:<strong><br>  - <strong>company<strong> (string): Company name to analyze (e.g., 'Booz Allen Hamilton', 'SAIC')<br>  - <strong>naics<strong> (string, optional): NAICS code to filter wins by<br>  - <strong>agency<strong> (string, optional): Agency to filter wins by<br><br><h3> set_aside_tracker<br>Track small business set-aside opportunities across federal agencies — 8(a), HUBZone, SDVOSB, WOSB, and SBA set-asides. Shows trending categories, upcoming deadlines, and agency set-aside spending patterns.<br><br><strong>Parameters:<strong><br>  - <strong>set_aside_type<strong> (string): Set-aside type: '8a', 'HUBZone', 'SDVOSB', 'WOSB', 'SBA', or 'all'<br>  - <strong>naics<strong> (string, optional): NAICS code to filter by<br>  - <strong>agency<strong> (string, optional): Agency to filter by</div>
+
+  <h2>API Endpoints</h2>
+  <ul>
+    <li><code>POST /mcp</code> — MCP protocol endpoint</li>
+    <li><code>POST /api/keys/signup</code> — Create free API key (body: {name, email})</li>
+    <li><code>GET /api/keys/usage?key=YOUR_KEY</code> — Check usage</li>
+    <li><code>GET /api/pricing</code> — View pricing tiers</li>
+    <li><code>GET /health</code> — Health check</li>
+  </ul>
+</div>
+<footer><div class="container"><p>&copy; 2026 EzBiz Services.</p></div></footer>
+</body>
+</html>

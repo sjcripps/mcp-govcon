@@ -1,0 +1,15 @@
+{
+  "name": "@ezbiz/mcp-govcon",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI-powered federal contracting intelligence — contract opportunity search, competitor win analysis, agency spending intelligence, and set-aside tracking using SAM.gov, USASpending.gov, and FPDS data.",
+  "scripts": {
+    "start": "bun run server.ts",
+    "dev": "bun --watch run server.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.0",
+    "cheerio": "^1.0.0",
+    "zod": "^3.24.0"
+  }
+}
